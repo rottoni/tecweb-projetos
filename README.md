@@ -7,7 +7,9 @@ Esse é um projeto de desenvolvimento Web simples que inclui as seguintes funcio
 3. Renderização de uma lista com os nomes dos usuários
 4. Armazenamento de dados via localStorage
 
-Obs.: esse projeto será reutilizado para fazer outra atividade de Programação de Dispositivos Moveis, por isso contem o logo da empresa fictícia AR Bank
+Observações: 
+    A. Esse projeto será reutilizado para fazer outra atividade de Programação de Dispositivos Moveis, por isso contem o logo da empresa fictícia AR Bank
+    B. Esqueci que a atividade exigia uma branch develop, os primeiros commits foram feitos direto na branch main.
 
 
 ---
@@ -20,9 +22,18 @@ Obs.: esse projeto será reutilizado para fazer outra atividade de Programação
 2. Acesse a pasta do projeto
     cd C:/ [...] /tecweb-projeto01
 
-3. Abra o arquivo 'index.html' na raíz do projeto.
-        OU
-   Instale a extensão Live Server e clique em "Go Live" no canto inferior direito do VS Code. A aplicação irá rodar na porta 5500.
+3. Há dois métodos para rodar a aplicação:
+
+    A. Utilizando Docker. Digite no terminal os seguintes comandos:
+        docker compose up -d
+        docker compose exec app npm install
+        docker compose exec app npm run dev
+
+    B. Utilizando Live Server.
+        Instale a extensão do VS Code chamada Live Server
+        Clique em "Go Live" no canto inferior direito do VS Code.
+
+4. Em ambos os casos, a aplicação irá rodar na porta 5500.
 
 
 ---
