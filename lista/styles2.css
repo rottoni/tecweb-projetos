@@ -1,0 +1,64 @@
+/* Centraliza o conteúdo na tela */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px; /* Cantos arredondados do card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para legibilidade */
+    font-family: sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    display: block;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Cantos arredondados nos campos */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Efeito ao clicar no campo */
+.formulario input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* Botão estilizado */
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Cantos arredondados no botão */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+/* Link de voltar */
+.back-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

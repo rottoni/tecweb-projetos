@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro - AR Bank</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    
+    <main class="container">
+        <h2>Cadastrar nova conta</h2>
+        <form id="register-form" class = "formulario">
+            <input type="text" id="nomeDoUsuario" placeholder="Nome do Usuario" required>
+            <input type="password" id="senhaDoUsuario" placeholder="Crie uma senha" required>
+            <input type="password" id="confirmarSenha" placeholder="Confirme a senha" required>
+            <button type="submit" class="btn btn-secondary">Finalizar Cadastro</button>
+        </form>
+        <section class="back-link">
+            <a href="../login/index.html">Já tem uma conta? Voltar ao login</a>
+        </section>
+    </main>
+    <script src="../contas.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
