@@ -38,6 +38,16 @@ Observações:
 
 ---
 
+## Dica para ver quais usuários já estão registrados
+
+Os dados de cada conta (usuário e senha) estão armazenados no LocalStorage.
+Para consultar, abra o console do navegador (apertando F12 e clicando em console).
+Lá haverá uma mensagem contendo os dados.
+Obviamente, isso serve apenas como uma demonstração, uma aplicação real NUNCA teria esses dados expostos.
+Miau.
+
+---
+
 ## Dica para trocar dados de usuários
 
 Para trocar senhas e nomes de usuários já estabelecidos faça o seguinte:
@@ -55,7 +65,7 @@ Para trocar senhas e nomes de usuários já estabelecidos faça o seguinte:
 ## Créditos do grupo
 
 - Rafael Ramos Ottoni de Castro - Matrícula: 2322130069
-- André Rodrigo Marques Côrtes - Matrícula: 
+- André Rodrigo Marques Côrtes  - Matrícula:2322130001
 
 
 ---
