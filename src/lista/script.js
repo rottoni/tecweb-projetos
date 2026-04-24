@@ -36,7 +36,7 @@ function excluirUsuario(nomeUsuario) {
     const contas = JSON.parse(dadosBrutos);
 
     // Remover a chave específica do objeto
-    if (confirm(Tem certeza que deseja excluir o usuário ${nomeUsuario}?)) {
+    if (confirm(`Tem certeza que deseja excluir o usuário ${nomeUsuario}?`)) {
         delete contas[nomeUsuario];
 
         // Salvar o objeto atualizado e renderiza de novo
