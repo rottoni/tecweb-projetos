@@ -65,7 +65,7 @@ Para trocar senhas e nomes de usuários já estabelecidos faça o seguinte:
 ## Créditos do grupo
 
 - Rafael Ramos Ottoni de Castro - Matrícula: 2322130069
-- André Rodrigo Marques Côrtes - Matrícula: 2322130001
+- André Rodrigo Marques Côrtes  - Matrícula:2322130001
 
 
 ---
