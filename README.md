@@ -1,6 +1,6 @@
 # 🖥️  Atividade Prática 01
 
-Esse é um projeto de desenvolvimento Web simples que inclui as seguintes funcionalidades:
+Esse é um projeto de desenvolvimento web que inclui as seguintes funcionalidades simples:
 
 1. Tela de login de usuário
 2. Tela de cadastro de novo usuário
@@ -9,12 +9,10 @@ Esse é um projeto de desenvolvimento Web simples que inclui as seguintes funcio
 
 # 🖥️  Atividade Prática 02
 
-O objetivo é incluir um backend funcional seguindo o modelo API REST
-O backend incluí arquivos de rotas, controladores, um server e um prisma
+O objetivo é incluir um backend funcional seguindo o modelo API REST <br>
+O backend incluí arquivos de rotas, controladores, um server e um prisma <br>
 No docker está incluso dois containers: "backend" e a database "db"
 
-DESCRIÇÃO DA API
----
 
 ## Como rodar essa aplicação web
 
@@ -35,8 +33,6 @@ DESCRIÇÃO DA API
 4. A aplicação irá rodar em http://localhost:5500
 
 
----
-
 ## Sobre a Lista de Usuários
 
 Os dados de cada conta estavam armazenados no LocalStorage do navegador
@@ -50,12 +46,7 @@ Para consultar a database FORA da aplicação, abra um terminal na pasta tecweb-
     npx prisma studio
 ```
 
----
-
 ## Créditos do grupo
 
 - Rafael Ramos Ottoni de Castro - Matrícula: 2322130069
 - André Rodrigo Marques Côrtes  - Matrícula:2322130001
-
-
----
