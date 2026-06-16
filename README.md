@@ -21,16 +21,13 @@ No docker está incluso dois containers: "backend" e a database "db"
 
 2. Acesse a pasta do projeto no terminal
 
-3. Rode a aplicação utilizando Docker. Insira no terminal:
+3. Rode a aplicação utilizando Docker. Abra o terminal na raíz do projeto e insira:
 
 ```bash
-    npm install
-    docker compose up -d
-    docker compose exec app npm install
-    docker compose exec app npm run dev
+docker compose up -d
 ```
 
-4. A aplicação irá rodar em http://localhost:5500
+4. A aplicação irá rodar em http://localhost:3000
 
 
 ## Sobre a Lista de Usuários
@@ -43,7 +40,7 @@ Agora, as senhas são ocultas.
 Para consultar a database FORA da aplicação, abra um terminal na pasta tecweb-projetos/backend e inserir:
 
 ```bash
-    npx prisma studio
+npx prisma studio
 ```
 
 ## Créditos do grupo
