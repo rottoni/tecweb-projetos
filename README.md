@@ -9,7 +9,9 @@ Esse é um projeto de desenvolvimento Web simples que inclui as seguintes funcio
 
 # 🖥️  Atividade Prática 02
 
-O objetivo é incluir um backend funcional integrado com um API REST ao projeto
+O objetivo é incluir um backend funcional seguindo o modelo API REST
+O backend incluí arquivos de rotas, controladores, um server e um prisma
+No docker está incluso dois containers: "backend" e a database "db"
 
 DESCRIÇÃO DA API
 ---
@@ -24,6 +26,7 @@ DESCRIÇÃO DA API
 3. Rode a aplicação utilizando Docker. Insira no terminal:
 
 ```bash
+    npm install
     docker compose up -d
     docker compose exec app npm install
     docker compose exec app npm run dev
@@ -34,30 +37,18 @@ DESCRIÇÃO DA API
 
 ---
 
-## Dica para ver quais usuários já estão registrados
+## Sobre a Lista de Usuários
 
+Os dados de cada conta estavam armazenados no LocalStorage do navegador
+Agora os dados estão armazenados no container "db"
+Esse container inclui o id, nome e email de cada usuário
+Agora, as senhas são ocultas.
 
-MUDAR POIS NÃO SÃO GUARDADOS MAIS POR LOCALSTORAGE
-    Os dados de cada conta (usuário e senha) estão armazenados no LocalStorage.
-    Para consultar, abra o console do navegador (apertando F12 e clicando em console).
-    Lá haverá uma mensagem contendo os dados.
-    Obviamente, isso serve apenas como uma demonstração, uma aplicação real NUNCA teria esses dados expostos.
-    Miau.
+Para consultar a database FORA da aplicação, abra um terminal na pasta tecweb-projetos/backend e inserir:
 
----
-
-## Dica para trocar dados de usuários
-
-
-MUDAR POIS NÃO SÃO MAIS GUARDADOS EM LOCALSTORAGE
-Para trocar senhas e nomes de usuários já estabelecidos faça o seguinte:
-    1. Abra a aplicação
-    2. No navegador, abra o console (apertando F12 e clicando em console)
-    3. Insira: localStorage.removeItem('contas');
-    4. Insira: location.reload;
-    5. Feche a aplicação e faça as alterações no arquivo contas.js
-    6. Abra de novo a aplicação e os novos dados estarão salvos.
-
+```bash
+    npx prisma studio
+```
 
 ---
 
