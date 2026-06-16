@@ -1,31 +1,38 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '../src/generated/prisma/index.js';
+
 const prisma = new PrismaClient();
 
 async function main() {
   const contasIniciais = [
-    { nome: 'rafael', senha: 'senha111' },
-    { nome: 'andre',  senha: 'senha222' },
-    { nome: 'luan',   senha: 'senha333' },
-    { nome: 'paloma', senha: 'senha444' },
-    { nome: 'renan',  senha: 'senha555' },
-    { nome: 'diego',  senha: 'senha666' },
-    { nome: 'fabio',  senha: 'senha777' },
-    { nome: 'emily',  senha: 'senha888' },
-    { nome: 'thais',  senha: 'senha999' },
-    { nome: 'celio',  senha: 'senha000' },
+    { name: 'rafael', email: 'rafael@email.com', password: 'senha111' },
+    { name: 'andre',  email: 'andre@email.com',  password: 'senha222' },
+    { name: 'luan',   email: 'luan@email.com',   password: 'senha333' },
+    { name: 'paloma', email: 'paloma@email.com', password: 'senha444' },
+    { name: 'renan',  email: 'renan@email.com',  password: 'senha555' },
+    { name: 'diego',  email: 'diego@email.com',  password: 'senha666' },
+    { name: 'fabio',  email: 'fabio@email.com',  password: 'senha777' },
+    { name: 'emily',  email: 'emily@email.com',  password: 'senha888' },
+    { name: 'thais',  email: 'thais@email.com',  password: 'senha999' },
+    { name: 'celio',  email: 'celio@email.com',  password: 'senha000' },
   ];
 
   for (const conta of contasIniciais) {
-    await prisma.usuario.upsert({
-      where:  { nome: conta.nome },
+    // Alterado para 'user' (conforme o seu schema.prisma)
+    await prisma.user.upsert({
+      where: { email: conta.email }, // O campo único no seu schema é o email
       update: {},
       create: conta,
     });
   }
 
-  console.log('Contas iniciais criadas com sucesso!');
+  console.log('Contas iniciais criadas com sucesso no banco na nuvem!');
 }
 
 main()
-  .catch((e) => { console.error(e); process.exit(1); })
-  .finally(async () => { await prisma.$disconnect(); });
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

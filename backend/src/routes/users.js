@@ -1,8 +1,10 @@
-const express = require('express');
+import express from 'express';
+import { listarUsuarios, excluirUsuario } from '../controllers/userController.js';
+
 const router = express.Router();
-const { listarUsuarios, excluirUsuario } = require('../controllers/userController');
 
 router.get('/', listarUsuarios);
-router.delete('/:nome', excluirUsuario);
 
-module.exports = router;
+router.delete('/:id', excluirUsuario);
+
+export default router;

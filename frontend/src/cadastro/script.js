@@ -5,28 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const nome          = document.getElementById('nomeDoUsuario').value.trim();
-      const senha         = document.getElementById('senhaDoUsuario').value.trim();
+      const nome           = document.getElementById('nomeDoUsuario').value.trim();
+      const senha          = document.getElementById('senhaDoUsuario').value.trim();
       const confirmarSenha = document.getElementById('confirmarSenha').value.trim();
 
+      if (senha !== confirmarSenha) {
+        alert('As senhas não coincidem!');
+        return;
+      }
+
       try {
-        const response = await fetch('/api/auth/cadastro', {
+        // Chamada apontando diretamente para a porta do container configurada
+        const response = await fetch('http://localhost:3000/api/auth/cadastro', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nome, senha, confirmarSenha }),
+          body: JSON.stringify({ nome, senha }), 
         });
 
         const data = await response.json();
 
         if (response.ok) {
-          alert(data.mensagem);
-          window.location.href = '../login/index.html';
+          alert(data.mensagem || 'Cadastro realizado com sucesso!');
+          window.location.href = '/src/login/index.html';
         } else {
-          alert(data.erro);
+          alert(data.erro || 'Erro ao realizar cadastro.');
         }
       } catch (error) {
         alert('Erro ao conectar com o servidor. Tente novamente.');
-        console.error(error);
+        console.error('Detalhes do erro de conexão:', error);
       }
     });
   }

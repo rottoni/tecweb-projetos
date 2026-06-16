@@ -1,6 +1,8 @@
 services:
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
@@ -9,8 +11,11 @@ services:
       db:
         condition: service_healthy
     volumes:
-      - ./backend:/app
+      - .:/app
+      - ../frontend:/frontend   # Caminho correto: sobe um nível (..) e acha o frontend irmão
       - /app/node_modules
+      - /app/node_modules/.prisma
+    command: sh -c "npx prisma generate --schema=/app/prisma/schema.prisma && node src/server.js"
 
   db:
     image: postgres:16

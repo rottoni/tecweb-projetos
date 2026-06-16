@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Login - AR Bank</title>
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/global.css">
+    <link rel="stylesheet" href="/src/login/style.css">
 </head>
 <body>
     <main class="container">
         <header>
             <section class="logo-wrapper">
-                <img src="../../assets/logo.png" alt="AR Bank" class="logo">
+                <img src="/assets/logo.png" alt="AR Bank" class="logo">
             </section>
         </header>      
         <hr>
@@ -20,10 +20,11 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
         <hr>
-        <button id="go-to-register" class="btn btn-secondary">Criar nova conta</button>
+        <a href="/src/cadastro/index.html">
+            <button id="go-to-register" class="btn btn-secondary" type="button">Criar nova conta</button>
+        </a>
         <hr>
     </main>
-    <script src="../contas.js"></script>
-    <script src="script.js"></script>
+    <script src="/src/login/script.js" defer></script>
 </body>
 </html>

@@ -29,6 +29,8 @@ docker compose up -d
 
 4. A aplicação irá rodar em http://localhost:3000
 
+## Para rodar a biblioteca dotenv no prisma.config.ts
+npm install dotenv
 
 ## Sobre a Lista de Usuários
 

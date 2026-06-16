@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro - AR Bank</title>
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/global.css">
+    <link rel="stylesheet" href="/src/cadastro/style.css">
 </head>
 <body>
     <main class="container">
         <h2>Cadastrar nova conta</h2>
-        <form id="register-form" class = "formulario">
-            <input type="text" id="nomeDoUsuario" placeholder="Nome do Usuario" required>
+        <form id="register-form" class="formulario">
+            <input type="text" id="nomeDoUsuario" placeholder="Nome do Usuário" required>
             <input type="password" id="senhaDoUsuario" placeholder="Crie uma senha" required>
             <input type="password" id="confirmarSenha" placeholder="Confirme a senha" required>
             <button type="submit" class="btn btn-secondary">Finalizar Cadastro</button>
         </form>
         <section class="back-link">
-            <a href="../login/index.html">Já tem uma conta? Voltar ao login</a>
+            <a href="/src/login/index.html">Já tem uma conta? Voltar ao login</a>
         </section>
     </main>
-    <script src="../contas.js"></script>
-    <script src="script.js"></script>
+    <script src="/src/cadastro/script.js" defer></script>
 </body>
 </html>
