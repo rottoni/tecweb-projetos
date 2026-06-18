@@ -22,8 +22,13 @@ async function renderizarContas() {
       const card = document.createElement('div');
       card.className = 'user-card';
       card.innerHTML = `
-        <div>
-          <strong>Usuário:</strong> ${usuario.nome}
+        <div class="user-info">
+          <div class="user-name">
+            <strong>Usuário:</strong> ${usuario.nome}
+          </div>
+          <div class="user-email">
+            <strong>Email:</strong> ${usuario.email}
+          </div>
         </div>
         <button class="btn-excluir" onclick="excluirUsuario(${usuarioId}, '${usuario.nome}')">Excluir</button>
       `;

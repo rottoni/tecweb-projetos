@@ -13,14 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      const nome  = document.getElementById('username').value.trim();
-      const senha = document.getElementById('password').value.trim();
+      const email = document.getElementById('emailDoUsuario').value.trim();
+      const senha = document.getElementById('senhaDoUsuario').value.trim();
+
+      // ALERTA PARA E-MAIL INVÁLIDO (Formato incorreto)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Por favor, insira um e-mail em formato válido (exemplo@email.com).');
+        return; // Interrompe a execução aqui, nem envia para o back-end
+      }
 
       try {
         const response = await fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nome, senha }),
+          body: JSON.stringify({ email, senha }),
         });
 
         const data = await response.json();
@@ -29,7 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
           alert(data.mensagem);
           window.location.href = '../lista/index.html';
         } else {
-          alert(data.erro);
+          //ALERTAS DE RETORNO DO BANCO DE DADOS
+          if (response.status === 404) {
+            alert('E-mail não encontrado! Cadastre-se ou verifique os dados.');
+          } else if (response.status === 401) {
+            alert('Senha incorreta! Tente novamente.');
+          } else {
+            alert(data.erro || 'Erro ao realizar login.');
+          }
         }
       } catch (error) {
         alert('Erro ao conectar com o servidor. Tente novamente.');

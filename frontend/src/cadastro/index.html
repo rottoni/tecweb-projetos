@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro - AR Bank</title>
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
     <link rel="stylesheet" href="/src/global.css">
     <link rel="stylesheet" href="/src/cadastro/style.css">
 </head>
 <body>
     <main class="container">
         <h2>Cadastrar nova conta</h2>
-        <form id="register-form" class="formulario">
-            <input type="text" id="nomeDoUsuario" placeholder="Nome do Usuário" required>
+        <form class="formulario" id="register-form" novalidate>
+            <input type="text" id="nomeDoUsuario" placeholder="Seu nome de usuário" required>
+            <input type="email" id="emailDoUsuario" placeholder="Seu email" required>
             <input type="password" id="senhaDoUsuario" placeholder="Crie uma senha" required>
             <input type="password" id="confirmarSenha" placeholder="Confirme a senha" required>
             <button type="submit" class="btn btn-secondary">Finalizar Cadastro</button>

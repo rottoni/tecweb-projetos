@@ -7,11 +7,11 @@ async function listarUsuarios(req, res) {
     const usuarios = await prisma.usuario.findMany({
       select: { 
         id: true, 
-        nome: true 
-        // criadoEm foi removido pois não existe no seu schema.prisma
+        nome: true,
+        email: true
       },
       orderBy: { 
-        id: 'asc' // Ordena por ID numérico de forma crescente
+        id: 'asc'
       },
     });
 

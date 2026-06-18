@@ -41,10 +41,6 @@ app.get('/lista', (req, res) => {
 
 // Rota padrão (Curinga) - Serve a tela de Login para qualquer outra rota que não exista
 app.get('*', (req, res) => {
-  // Se o navegador estiver tentando achar um arquivo real (como imagem ou ícone) que sumiu, retorna 404
-  if (req.url.includes('.')) {
-    return res.status(404).send('Arquivo não encontrado');
-  }
   // Se for apenas navegação de páginas, joga para a tela inicial de Login
   res.sendFile('/frontend/src/login/index.html');
 });
