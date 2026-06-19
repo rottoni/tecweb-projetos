@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #6599E5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,12 +40,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.logo {
-    width: 50;
-    height: auto;
-    max-width: 100%;
 }
 
 .btn-primary { background-color: #1877f2; color: white; }

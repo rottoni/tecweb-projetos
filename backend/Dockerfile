@@ -11,4 +11,4 @@ RUN npx prisma generate
 EXPOSE 3000
 
 # Roda migrations, seed e inicia o servidor
-CMD npx prisma migrate deploy && node prisma/seed.js && node src/server.js
+CMD npx prisma migrate dev --name init --skip-seed && node prisma/seed.js && node src/server.js

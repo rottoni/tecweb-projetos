@@ -5,20 +5,18 @@
     box-sizing: border-box;
 }
 
+.logo{
+    width: 250px;
+    margin-bottom: 20px;
+}
+
 .login-container {
     background-color: #ffffff;
     padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; /* Largura máxima do formulário */
-}
-
-input {
-    width: 100%;
-    margin-bottom: 0.5rem;
-    border: 1px solid #dddfe2;
-    border-radius: 6px;
+    max-width: 400px;
 }
 
 #login-form {
@@ -30,17 +28,24 @@ input {
     min-height: 100px; 
 }
 
-.input-group {
-    width: 100%;
-    max-width: 300px;
-}
-
 input {
     width: 100%;
-    padding: 10px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    padding:10px;
+}
+
+.text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+    color: #253a57;
 }
 
 .btn-login {
+    margin-top: 1rem;
     width: 100%;
     padding: 0.75rem;
     background-color: #1877f2;
@@ -54,22 +59,7 @@ input {
 }
 
 .btn-login:hover {
-    background-color: #166fe5;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #dddfe2;
-    margin: 1.5rem 0;
-}
-
-.register-section {
-    text-align: center;
-}
-
-.register-section p {
-    color: #606770;
-    margin-bottom: 1rem;
+    background-color: #0c5cc5;
 }
 
 .btn-register {
@@ -78,12 +68,12 @@ hr {
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .btn-register:hover {
-    background-color: #36a420;
+    background-color: #268813;
 }

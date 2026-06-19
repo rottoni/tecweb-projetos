@@ -2,17 +2,22 @@ import { PrismaClient } from '../generated/prisma/index.js';
 const prisma = new PrismaClient();
 
 async function login(req, res) {
-  const { nome, senha } = req.body;
+  // Alterado de 'nome' para 'email'
+  const { email, senha } = req.body;
 
-  if (!nome || !senha) {
-    return res.status(400).json({ erro: 'Nome e senha são obrigatórios.' });
+  if (!email || !senha) {
+    return res.status(400).json({ erro: 'E-mail e senha são obrigatórios.' });
   }
 
   try {
-    const usuario = await prisma.usuario.findUnique({ where: { nome } });
+    const usuario = await prisma.usuario.findUnique({ where: { email } });
 
-    if (!usuario || usuario.senha !== senha) {
-      return res.status(401).json({ erro: 'Usuário ou senha incorretos.' });
+    if (!usuario) {
+      return res.status(404).json({ erro: 'Usuario não encontrado' });
+    }
+
+    if (usuario.senha !== senha) {
+      return res.status(401).json({ erro: 'Senha incorreta' });
     }
 
     return res.status(200).json({ mensagem: `Bem-vindo, ${usuario.nome}!` });
@@ -23,21 +28,24 @@ async function login(req, res) {
 }
 
 async function cadastro(req, res) {
-  const { nome, senha } = req.body;
+  // Agora recebemos email, nome e senha do front-end
+  const { email, nome, senha } = req.body;
 
-  if (!nome || !senha) {
-    return res.status(400).json({ erro: 'Nome e senha são obrigatórios.' });
+  if (!email || !nome || !senha) {
+    return res.status(400).json({ erro: 'E-mail, nome e senha são obrigatórios.' });
   }
 
   try {
-    const usuarioExistente = await prisma.usuario.findUnique({ where: { nome } });
+    // A verificação de duplicidade agora checa o e-mail único
+    const usuarioExistente = await prisma.usuario.findUnique({ where: { email } });
 
     if (usuarioExistente) {
-      return res.status(409).json({ erro: 'Este nome de usuário já está sendo usado no AR Bank.' });
+      return res.status(409).json({ erro: 'Este e-mail já está na lista de usuários cadastrados.' });
     }
 
+    // Salvando os três campos no banco de dados
     await prisma.usuario.create({ 
-      data: { nome, senha } 
+      data: { email, nome, senha } 
     });
 
     return res.status(201).json({ mensagem: 'Conta criada com sucesso!' });
