@@ -1,0 +1,41 @@
+h2{
+    margin-bottom: 30px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    min-height: 100px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    padding:10px;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.back-link a {
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #268813;
+}
